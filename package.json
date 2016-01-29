@@ -1,0 +1,33 @@
+{
+  "name": "fis3-hook-npm",
+  "version": "0.0.1",
+  "description": "Npm package integraion for fis3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qqiangwu/fis3-hook-npm.git"
+  },
+  "keywords": [
+    "fis",
+    "fis3",
+    "commonJs",
+    "module",
+    "npm"
+  ],
+  "author": "qqiangwu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qqiangwu/fis3-hook-npm/issues"
+  },
+  "homepage": "https://github.com/qqiangwu/fis3-hook-npm",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "fis3": "^3.1.3",
+    "fis3-postpackager-loader": "^1.2.7",
+    "mocha": "^2.2.1",
+    "mocha-junit-reporter": "^1.4.0"
+  }
+}

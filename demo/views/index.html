@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="boot" ng-strict-di>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Test</title>
+
+
+</head>
+<body ng-controller="TestCtrl">
+    <div ng-repeat="item in test">
+        <h2>{{item.id}}</h2>
+        <p>{{item.title}}</p>
+        <hr/>
+    </div>
+
+    <script src="./boot.js?__inline"></script>
+</body>
+</html>
