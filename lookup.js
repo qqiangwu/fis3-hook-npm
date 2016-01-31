@@ -14,7 +14,7 @@ function _lookupModule(cname, opts) {
     try {
         var pkgInfo = require(moduleJson);
         var main = pkgInfo.main;
-        return _find([opts.base, cname, main].join('/'), fis.project.getProjectPath());
+        return _find([opts.base, cname, main || 'index'].join('/'), fis.project.getProjectPath());
     } catch (e) {
         fis.log.debug('[Lookup Module] invalid package', e);
     }
@@ -43,13 +43,12 @@ module.exports = function(info, file, opts) {
         }
 
         if (resolved && resolved.file) {
-            info.id = info.moduleId = info.rest;
+            fis.log.debug('[NPM:lookup] found file ', info.rest);
+
+            info.id = resolved.file.getId();
             info.file = resolved.file;
 
             fis.match(info.file.getId(), {
-                id: info.rest,
-                moduleId: info.rest,
-                isMod: true,
                 isNode: true
             });
         }

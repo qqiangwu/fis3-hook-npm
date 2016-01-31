@@ -78,7 +78,7 @@ The following configuration items are all optional.
 
 + `base`: default to 'node_modules', eg. where to find node modules installed by npm.
 + `shim`: used to cope with unstandard node packages.
-    ```
+    ```js
     fis.hook('npm', {
         shim: {
             'angular-ui-router': {
