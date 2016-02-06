@@ -1,4 +1,6 @@
 # fis3-hook-npm
+[![Build Status](https://travis-ci.org/qqiangwu/fis3-hook-npm.svg?branch=master)](https://travis-ci.org/qqiangwu/fis3-hook-npm)
+
 Modularity is a big problem in web development. Now we have a great compiler for our front-end code, how do we achieve modularity?
 
 + Firstly, we must have a modularity standard.
