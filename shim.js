@@ -3,12 +3,13 @@
 module.exports = function(info, opts) {
     var file = info.file;
     var content = info.content;
+    var nodeId = file.nodeId;
 
-    if (file.isNode) {
-        var shim = opts.shim && opts.shim[file.moduleId];
+    if (nodeId) {
+        var shim = opts.shim && opts.shim[nodeId];
 
         if (shim) {
-            fis.log.debug('[NPM shim]' + file.moduleId);
+            fis.log.debug('[NPM shim]' + nodeId);
 
             var prefix = '';
             var postfix = '';

@@ -1,0 +1,10 @@
+language: node_js
+node_js: node
+deploy:
+  provider: npm
+  email: wqzhiep@gmail.com
+  api_key:
+    secure: b//K7WUAQe5cbT5G1LhwGyYe5nidpUX8bJHiqOJgwU6owraUNuMXWpbADvcrSSW6luohBol60AuT5Gxy67OHDJukhZCL4GWT8YgIzEf/DenW02jyR1Xzk8CXNGj0uG274F5lAaGHGz7emo6Iba/mWtChfyvaWcchIM8DGmq7U/7UhfuvEz0ZOW5rLK7aKabi4uKAJhZr7wXFaKBnnapw1kdgdtdYdGHxD+vpSBcbeOMCC5wLyMwfoZzW1zwKaa40uXQOSoSQNWOL4FcwooNDKKeyj2HCuJb965b2xrkgN5sIMnMUKjAP53+XDTLmGNpAzhCKECLbUx9z2xJz+CYSn9RRDnNko9fvhjcWOlfTUP2C7WKrZdXcUj03flgSQrpRjw1TAim8bEmfsnzZx7KuPUP7gyO8A9NPMUcZ0jhxrr4bAdcPNpZqL3wGoiRtJAnEtntWqqu5+x4ET6lPSWS3FDQH3ccSj683ahdB7vzvQbdA80xeJ5pQyCsoekBbEP7S6zMMJKgv73AFKcMZWv2Rg2ZonDPfDjxNHfqd6cd4nSaS//NuMhhmsC937uxZK62PonneEI+Sem8Fb4rGaCmcEoDc2dWgwa2kgJqQg2UxVgyC7PMW7YNvVbPO0ldW/JHkcLmA8N9VCQkWO69fiEEy9kc/4UIi8lVo549ZcMOJu2g=
+  on:
+    tags: true
+    repo: qqiangwu/fis3-hook-npm

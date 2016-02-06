@@ -58,6 +58,8 @@ In your code:
 // boot.js
 // import modjs for module loading
 // @require fis-mod
+// if you want to refer to a css, DO REMEMBER TO ADD '.css'
+// @require css-lib/xxx.css
 (function(){
     'use strict';
 
@@ -101,4 +103,5 @@ The following configuration items are all optional.
     ```
 
 # Demo
-See the `demo/` foler.
++ See the `demo/` foler.
++ [React Example](https://github.com/qqiangwu/site)

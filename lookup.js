@@ -48,8 +48,9 @@ module.exports = function(info, file, opts) {
             info.id = resolved.file.getId();
             info.file = resolved.file;
 
+            // attach nodeId for shim
             fis.match(info.file.getId(), {
-                isNode: true
+                nodeId: info.rest
             });
         }
     }
