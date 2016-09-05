@@ -21,7 +21,13 @@ function _lookupModule(cname, opts) {
 }
 
 function _lookupSubModule(path, opts) {
-    return _find([opts.base, path].join('/'), fis.project.getProjectPath());
+    var info = _find([opts.base, path].join('/'), fis.project.getProjectPath());
+
+    if (!info.file) {
+        info = _find([opts.base, path, 'index.js'].join('/'), fis.project.getProjectPath());
+    }
+
+    return info;
 }
 
 module.exports = function(info, file, opts) {

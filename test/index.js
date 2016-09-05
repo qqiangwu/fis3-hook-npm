@@ -46,6 +46,13 @@ describe('fis3-hook-npm-lookup', function() {
         expect(p).to.have.property('file');
         expect(p.id).to.be.equal('node_modules/css/x.css');
     });
+
+    it('submodule-index-lookup', function() {
+        var p = fis.project.lookup('subx/sub');
+
+        expect(p).to.have.property('file');
+        expect(p.id).to.be.equal('node_modules/subx/sub/index.js');
+    });
 });
 
 describe('fis3-hook-npm-shim', function() {

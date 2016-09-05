@@ -74,35 +74,42 @@ In your code:
 })();
 ```
 
+## Rules
++ For top level package, look into package.json and pick up the js file specified by the `main` attribute.
++ For sub packages, say, `foo`, try `foo/index.js` first, if no match found, search as the following
++ For others, say, `bar`, try `bar` first and then try `bar.js`
+
 # Caveat
 FIS3-HOOK-NPM MUST BE USED WITH FIS3-HOOK-COMMONJS TOGETHER! Since I don't want to duplicate the code.
+
+FIS3-HOOK-NPM only support npm3, it cannot cope with nested modules.
 
 ## Configuration
 The following configuration items are all optional.
 
-+ `base`: default to 'node_modules', eg. where to find node modules installed by npm.
-+ `shim`: used to cope with unstandard node packages.
-    ```js
-    fis.hook('npm', {
-        shim: {
-            'angular-ui-router': {
-                deps: {
-                    // moduleName: exportSymbol
-                    // eg. var exportSymbol = require(moduleName);
-                    'angular': 'angular'
-                }
-            },
-            'angular-markdown-directive': {
-                deps: {
-                    'angular': 'angular',
-                    // we don't need the symbol
-                    'angular-sanitize': null,
-                    'showdown': 'Showdown'
-                },
-                exports: '"btford.markdown"'
++ `base`: default to 'node_modules', eg. where to find node modules installed by npm. **Note that, `base` must be inside the root folder or it will not work.**
++ `shim`: used to cope with unstandard node packages. (Not tested sufficiently)
+```js
+fis.hook('npm', {
+    shim: {
+        'angular-ui-router': {
+            deps: {
+                // moduleName: exportSymbol
+                // eg. var exportSymbol = require(moduleName);
+                'angular': 'angular'
             }
-    });
-    ```
+        },
+        'angular-markdown-directive': {
+            deps: {
+                'angular': 'angular',
+                // we don't need the symbol
+                'angular-sanitize': null,
+                'showdown': 'Showdown'
+            },
+            exports: '"btford.markdown"'
+        }
+});
+```
 
 # Demo
 + See the `demo/` foler.
