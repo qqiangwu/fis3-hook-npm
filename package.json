@@ -1,6 +1,5 @@
 {
   "name": "fis3-hook-npm",
-  "version": "1.0.0",
   "description": "Npm package integraion for fis3",
   "main": "index.js",
   "scripts": {
