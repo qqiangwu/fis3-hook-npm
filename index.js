@@ -1,5 +1,6 @@
 var lookup = require('./lookup');
 var shim = require('./shim');
+var browserify = require('./browserify');
 
 module.exports = function(fis, opts) {
     var default_opts = {
@@ -17,5 +18,6 @@ module.exports = function(fis, opts) {
     });
     fis.on('standard:js', function(info){
         shim(info, opts);
+        browserify(info, opts);
     });
 };

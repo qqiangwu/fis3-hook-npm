@@ -91,3 +91,40 @@ describe('fis3-hook-npm-shim', function() {
         expect(c.getContent()).to.contain('module.exports = "btford.markdown"');
     });
 });
+
+
+describe('fis3-hook-npm-browserfiy', function() {
+    beforeEach(function () {
+        fis.project.setProjectRoot(__dirname);
+        fis.media().init();
+        fis.config.init();
+        fis.compile.setup();
+        fis.cache.enable = false;
+
+        hookSelf();
+    });
+
+    it('dev', function() {
+        var info = fis.project.lookup('env/index');
+        var file = fis.file(info.file.realpath);
+
+        var c = fis.compile(file);
+        var content = c.getContent();
+
+        expect(content).to.contain('x: "development"');
+        expect(content).to.contain('y: "development"');
+    });
+
+    it('prod', function () {
+        var info = fis.project.lookup('env/index2');
+        var file = fis.file(info.file.realpath);
+
+        file.optimizer = true;
+
+        var c = fis.compile(file);
+        var content = c.getContent();
+
+        expect(content).to.contain('x: "production"');
+        expect(content).to.contain('y: "production"');
+    });
+});
