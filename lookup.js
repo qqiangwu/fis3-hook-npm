@@ -8,12 +8,22 @@ function _find(name, path) {
     return info;
 }
 
+function _getIndexJS(pkgInfo) {
+    var browser = pkgInfo.browser;
+
+    if (browser && typeof browser === 'string') {
+        return browser;
+    }
+
+    return pkgInfo.main;
+}
+
 function _lookupModule(cname, opts) {
     var moduleJson = [fis.project.getProjectPath(), opts.base, cname, 'package.json'].join('/');
 
     try {
         var pkgInfo = require(moduleJson);
-        var main = pkgInfo.main;
+        var main = _getIndexJS(pkgInfo);
         return _find([opts.base, cname, main || 'index'].join('/'), fis.project.getProjectPath());
     } catch (e) {
         fis.log.debug('[Lookup Module] invalid package', e);
