@@ -30,7 +30,7 @@ describe('fis3-hook-npm-lookup', function() {
         var p = fis.project.lookup('warning');
 
         expect(p).to.have.property('file');
-        expect(p.id).to.be.equal('node_modules/warning/warning.js');
+        expect(p.id).to.be.equal('node_modules/warning/browser.js');
     });
 
     it('submodule-lookup', function() {
